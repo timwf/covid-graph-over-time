@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from './api/index'
 import logo from './logo.svg';
 import './App.css';
-import MainPage from './components/MainPage'
+
+import MainGraph from './components/MainGraph'
 
 function App() {
+
+  const [ fetchedCountries, setFetchedCountries] = useState([]);
+
+  useEffect( () => {
+    const fetchAPI = async () => {
+        setFetchedCountries(await fetchData()); 
+    }
+    fetchAPI();
+    
+}, [setFetchedCountries])
+
+if (fetchedCountries.newData){   
+    console.log(fetchedCountries.newData["2020-4-25"]);
+}
+
+
+
   return (
     <div className="App">
-      <h1>test</h1>
-      < MainPage >
-      </MainPage>
+      < MainGraph data={fetchedCountries}> </MainGraph>
     </div>
   );
 }
