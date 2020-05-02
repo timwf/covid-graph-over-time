@@ -4,13 +4,13 @@ const url = 'https://pomber.github.io/covid19/timeseries.json';
 
 export const fetchData = async() => {
     let dummyDate = [];
-    let newData = {}
-
-    
+    let newData = {}    
     try {
         const res = await axios.get(url);
         const data = res.data
-        console.log(data);
+
+        //data come in sorted by country {country: [date, deaths, confirmed, recovered]}
+        //this sorts by date {date: [country, deaths, confirmed, recovered]}
         for (let [key, value] of Object.entries(data)) {           
             for (let [keyt, valuet] of Object.entries(value)) {                  
                     if (dummyDate.indexOf(valuet.date) === -1){
@@ -28,8 +28,10 @@ export const fetchData = async() => {
           }       
           console.log(newData); 
         return { newData }
-    } catch (error) {
+    }   catch (error) {
         console.log(error);
     }
 }
+
+
 
