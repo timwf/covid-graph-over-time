@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from './api/index'
-import logo from './logo.svg';
 import './App.css';
-
 import MainGraph from './components/MainGraph'
+import Loader from 'react-loader-spinner'
 
 function App() {
+const [ fetchedCountries, setFetchedCountries] = useState([]);
+const [loading, setLoading] = useState(true)
 
-  const [ fetchedCountries, setFetchedCountries] = useState([]);
-
-  useEffect( () => {
+//gets data from api
+useEffect( () => {
     const fetchAPI = async () => {
         setFetchedCountries(await fetchData()); 
+        setLoading(false)
     }
-    fetchAPI();
-    
+    fetchAPI();   
+    setLoading(true) 
 }, [setFetchedCountries])
 
-if (fetchedCountries.newData){   
-    console.log(fetchedCountries.newData["2020-4-25"]);
-}
+  if (loading){
+    return(
+      <Loader
+      className="loading"
+      type="Puff"
+      color="#00BFFF"
+      height={100}
+      width={100}
 
-
-
+   />
+    )
+  } else 
   return (
     <div className="App">
       < MainGraph data={fetchedCountries}> </MainGraph>

@@ -36,6 +36,10 @@ export const fetchData = async() => {
     }
 }
 
+export const countryAry = async() => {
+
+}
+
 
 
 
