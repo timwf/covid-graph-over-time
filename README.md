@@ -8,6 +8,10 @@
 
 ## Interactive graph showing Covid-19 cases (confirmed, deaths and recoveries) over time using api https://pomber.github.io/covid19/timeseries.json. 
 
+### Demo
+
+Find the demo <a href="https://timwf.github.io/covid-19-timeline/">here</a>
+
 ### Dependencies 
 
 * @nivo/bar
