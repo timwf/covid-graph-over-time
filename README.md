@@ -6,11 +6,11 @@
 
 # Covid-19 Timeline Interactive React App
 
-## Interactive graph showing Covid-19 cases (confirmed, deaths and recoveries) over time using api https://pomber.github.io/covid19/timeseries.json. 
+Interactive graph showing Covid-19 cases (confirmed, deaths and recoveries) over time using api https://github.com/pomber/covid19. 
 
-### Demo
 
-Find the demo <a href="https://timwf.github.io/covid-19-timeline/">here</a>
+
+### Find the demo <a href="https://timwf.github.io/covid-19-timeline/">here</a>
 
 ### Dependencies 
 
