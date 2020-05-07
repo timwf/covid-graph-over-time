@@ -18,5 +18,5 @@ Interactive graph showing Covid-19 cases (confirmed, deaths and recoveries) over
 * react-axios
 * react-select
 
-### Feel free to get involved
+### Feel free to get involved 
 
